@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      min-height: 100vh;
+      padding:0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: brown;
+    }
+    .content{
+      position: relative;
+      width: 100px;
+      height: 100px;
+      perspective:(1000px);
+    }
+    .outside{
+      background-color: aqua;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backface-visibility: hidden;
+      transition: all 1s ease-in-out;
+    }
+    .inside{
+      background-color: rgb(119, 0, 255);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backface-visibility: hidden;
+      transition: all 1s ease-in-out;
+    }
+    .inside{
+      transform:rotateY(0deg);
+    }
+    .outside{
+      transform:rotateY(-180deg);
+    }
+    .content:hover .inside{
+      transform: rotateY(180deg);
+    }
+    .content:hover .outside{
+      transform: rotateY(0deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <div class="inside">inside</div>
+    <div class="outside">outside</div>
+  </div>
+</body>
+</html>
